@@ -11,16 +11,15 @@ describe('Basic details', () => {
   it('works', async () => {
     const el = await fixture(html` <basic-details></basic-details> `);
   });
-  // Checks for spy function
-  it('checks for spy', () => {
-    const SpyMethod = Sinon.spy(el, '_toDashboard');
-    el._toDashboard();
-    expect(SpyMethod.calledOnce).to.be.true;
-  });
-
   // Checks for accessibility
   it('checks for accessibility', async () => {
     expect(el).to.be.accessible;
+  });
+  // Checks for spy function
+  it('checks for spy to _toDashboard', () => {
+    const SpyMethod = Sinon.spy(el, '_toDashboard');
+    el._toDashboard();
+    expect(SpyMethod.calledOnce).to.be.true;
   });
   // Checks for Loan Type Value
   xit('checks for Loan Type Value', async () => {
