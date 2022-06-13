@@ -3,14 +3,13 @@ import Sinon from 'sinon';
 import { stub } from 'sinon';
 import '../src/LoanBasicDetails/BasicDetails.js';
 
-describe('Basic details', () => {
-  // Write test cases inside this block
-  // refer basic-details.js files
+const el = await fixture(html`<basic-details></basic-details>`);
+const form = el.shadowRoot.querySelectorAll('lion-button');
 
-  it('checks for spy function', () => {
-    const el = fixture(html`<basic-details></basic-details>`);
-    const myspy = Sinon.spy(el, '_toDashboard');
-    form.click();
-    expect(myspy.calledOnce).to.be.true;
+describe('Basic details', () => {
+  it('checks for spy', () => {
+    const fun = Sinon.spy(el, '_toDashboard');
+    form[0].click();
+    expect(fun.calledOnce).to.be.true;
   });
 });
