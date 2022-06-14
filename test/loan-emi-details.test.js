@@ -23,22 +23,4 @@ describe('Loan EMI details', () => {
   it('checks for accessibility', async () => {
     expect(el).to.be.accessible();
   });
-
-  it('checks for h2 heading textValue', async () => {
-    const h2 = el.shadowRoot.querySelector('h2');
-    expect(h2).to.be.exist;
-    expect(h2.textContent).to.be.equal('EMI Details');
-  });
-
-  it('checks for spy the method _toBasicDetails', () => {
-    const SpyMethodBasicDetails = Sinon.spy(el, '_toBasicDetails');
-    button[0].click();
-    expect(SpyMethodBasicDetails.calledOnce).to.be.true;
-  });
-
-  it('checks for spy the method _toCustomer', () => {
-    const SpyMethodToCustomer = Sinon.spy(el, '_toCustomer');
-    button[1].click();
-    expect(SpyMethodToCustomer.calledOnce).to.be.true;
-  });
 });
