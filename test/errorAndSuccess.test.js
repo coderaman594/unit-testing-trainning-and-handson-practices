@@ -23,10 +23,10 @@ describe('Error', () => {
     const el = await fixture(html`<loan-error></loan-error>`);
     expect(el).to.be.accessible();
   });
-  it('Passes spy on Validataion ', async () => {
-    const el = await fixture(html`<loan-error></loan-error>`);
-    const mySpyMethod = Sinon.spy(el, '_toHome');
-    el.shadowRoot.querySelector('button').click();
-    expect(mySpyMethod.calledOnce).to.be.true;
+  it('checks for home method', async () => {
+    const spyMethod = Sinon.spy(el, '_toHome');
+    const button = el.shadowRoot.querySelectorAll('lion-button');
+    button[0].click();
+    expect(spyMethod.calledOnce).to.be.true;
   });
 });
