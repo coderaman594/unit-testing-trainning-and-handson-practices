@@ -12,10 +12,12 @@ describe('customer details', () => {
   it('works', async () => {
     const el = await fixture(html`<customer-details></customer-details> `);
   });
+
   // Checks for accessibility
   it('checks for accessibility', async () => {
     expect(el).to.be.accessible;
   });
+
   // Checks for spy function
   it('checks for spy to _toEmidetails', () => {
     const SpyMethod = Sinon.spy(el, '_toEmidetails');

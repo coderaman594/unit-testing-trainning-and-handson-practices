@@ -8,6 +8,7 @@ let el;
 
 describe('LoanApplication', () => {
   // Write test cases inside this block
+
   before(async () => {
     el = await fixture(html`<loan-application></loan-application>`);
   });

@@ -5,10 +5,12 @@ import '../src/SuccessAndError/Error.js';
 
 describe('Success', () => {
   // Write test cases inside this block
+
   it('Checks for Element Accessible', async () => {
     const el = await fixture(html`<loan-success></loan-success>`);
     expect(el).to.be.accessible();
   });
+
   it('Passes spy on Validataion ', async () => {
     const el = await fixture(html`<loan-success></loan-success>`);
     const mySpyMethod = Sinon.spy(el, '_toHome');
@@ -19,10 +21,12 @@ describe('Success', () => {
 
 describe('Error', () => {
   // Write test cases inside this block
+
   it('Checks for Element Accessible', async () => {
     const el = await fixture(html`<loan-error></loan-error>`);
     expect(el).to.be.accessible();
   });
+
   it('checks for Spy', async () => {
     const spyMethod = Sinon.spy(el, '_toHome');
     const button = el.shadowRoot.querySelectorAll('lion-button');

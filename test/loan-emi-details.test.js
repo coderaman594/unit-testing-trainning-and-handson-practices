@@ -9,6 +9,7 @@ const button = el.shadowRoot.querySelectorAll('lion-button');
 
 describe('Loan EMI details', () => {
   // Write test cases inside this block
+
   beforeEach(function () {
     localStorage.setItem(
       'emi',
