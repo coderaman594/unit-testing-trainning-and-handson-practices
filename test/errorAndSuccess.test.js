@@ -23,7 +23,7 @@ describe('Error', () => {
     const el = await fixture(html`<loan-error></loan-error>`);
     expect(el).to.be.accessible();
   });
-  it('checks for home method', async () => {
+  it('checks for Spy', async () => {
     const spyMethod = Sinon.spy(el, '_toHome');
     const button = el.shadowRoot.querySelectorAll('lion-button');
     button[0].click();
