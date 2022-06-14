@@ -1,6 +1,6 @@
 import Sinon from 'sinon';
 import { html, fixture, expect } from '@open-wc/testing';
-import '../src/dashboard/Dashboard.js';
+import '../src/dashboard/Dashboard-menu.js';
 
 const el = await fixture(html`<dashboard-menu></dashboard-menu>`);
 const button = el.shadowRoot.querySelector('button');

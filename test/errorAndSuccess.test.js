@@ -1,21 +1,32 @@
 import { html, fixture, expect } from '@open-wc/testing';
- import Sinon from 'sinon';
+import Sinon from 'sinon';
 import '../src/SuccessAndError/Success.js';
 import '../src/SuccessAndError/Error.js';
 
-describe('Success screen ', () => {
+describe('Success', () => {
   // Write test cases inside this block
- 
-  const el=await fixture(html`<loan-success></loan-success>`);
-  const myspy=Sinon.spy(el,'_toHome');
-   myspy();
-  expect(myspy.called).to.be.true;
+  it('Checks for Element Accessible', async () => {
+    const el = await fixture(html`<loan-success></loan-success>`);
+    expect(el).to.be.accessible();
+  });
+  it('Passes spy on Validataion ', async () => {
+    const el = await fixture(html`<loan-success></loan-success>`);
+    const mySpyMethod = Sinon.spy(el, '_toHome');
+    el.shadowRoot.querySelector('button').click();
+    expect(mySpyMethod.calledOnce).to.be.true;
+  });
 });
 
-describe('error screen', () => {
+describe('Error', () => {
   // Write test cases inside this block
-  const el=await fixture(html`<loan-error></loan-error>`);
-  const mispy=Sinon.spy(el,'_toHome');
-  mispy();
-  expect(mispy.called).to.be.true;
+  it('Checks for Element Accessible', async () => {
+    const el = await fixture(html`<loan-error></loan-error>`);
+    expect(el).to.be.accessible();
+  });
+  it('Passes spy on Validataion ', async () => {
+    const el = await fixture(html`<loan-error></loan-error>`);
+    const mySpyMethod = Sinon.spy(el, '_toHome');
+    el.shadowRoot.querySelector('button').click();
+    expect(mySpyMethod.calledOnce).to.be.true;
+  });
 });

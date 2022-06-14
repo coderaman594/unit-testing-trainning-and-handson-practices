@@ -1,12 +1,20 @@
-import Sinon from 'sinon'
-import { html,fixture, expect } from '@open-wc/testing';
+import Sinon from 'sinon';
+import { html, fixture, expect } from '@open-wc/testing';
 import '../src/dashboard/Dashboard.js';
 
-describe('dashboard menu',() =>{
-    it('checks dashboard menu',async ()=>{
-     const el=await fixture(html `<dash-board></dash-board>`);
-     const ourd=Sinon.spy(el,'getOverview');
-     el.firstUpdated();
-     expect(ourd.calledOnce).to.be.true;
-    });
+describe('dashboard', () => {
+  // Test
+  it('works', async () => {
+    const el = await fixture(html`<dash-board></dash-board>`);
+  });
+  // Checks for accessibility
+  it('checks for accessibility', async () => {
+    const el = await fixture(html`<dash-board></dash-board>`);
+    await expect(el).to.be.accessible;
+  });
+  // Checks for dashboard overview accessibility
+  it('checks for Dashboard Overview accessibility', async () => {
+    const el = await fixture(html`<dashboard-overview></dashboard-overview>`);
+    await expect(el).to.be.accessible;
+  });
 });
