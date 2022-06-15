@@ -23,4 +23,22 @@ describe('Loan EMI details', () => {
   it('checks for accessibility', async () => {
     expect(el).to.be.accessible();
   });
+
+  it('checks for the headerText', async () => {
+    const heading = el.shadowRoot.querySelector('h2');
+    expect(heading).to.exist;
+    expect(heading.textContent).to.equal('EMI Details');
+  });
+
+  it('checks for the spy method', () => {
+    const spyMethod = Sinon.spy(el, '_toBasicDetails');
+    button[0].click();
+    expect(spyMethod.calledOnce).to.be.true;
+  });
+
+  it('checks for the spy method', () => {
+    const func = Sinon.spy(el, '_toCustomer');
+    button[1].click();
+    expect(func.calledOnce).to.be.true;
+  });
 });
